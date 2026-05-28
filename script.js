@@ -9,16 +9,21 @@ const checkShelfBtn = document.querySelector('.info-btn');
 
 // using 3 types of  event Listeners input and submit
 bookForm.addEventListener('submit', handleFormSubmit);
-bookReview.addEventListener('input', runLiveReviewValidation); 
+bookReview.addEventListener('input', runLiveReviewValidation);
 checkShelfBtn.addEventListener('click, showShelfStatitics');
 
 // Event handler functions & validation
-function handleFormSubmit(event)
-  Event.preventDefault(); // page refresh
-  
+
+function handleFormSubmit(event) {
+Event.preventDefault(); // page refresh
+
 // html attribute validation check
 let isHtmlValid = bookTitle.validity.valid;
 if (!isHtmlValid) {
-    titleValidationHint.style.display = 'block';
-    bookTitle.style.borderColor = '#b91c1c';
+  titleValidationHint.style.display = 'block';
+  bookTitle.style.borderColor = '#b91c1c';
+} else {
+  titleValidationHint.style.display = 'none';
+  bookTitle.style.borderColor = '#ddd';
+}
 }
