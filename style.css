@@ -67,6 +67,23 @@ button:hover {
     font-size: 13px;
 
 }
+#bookShelf {
+    margin-top: 15px;
+}
+.book-item {
+    background: #3f4f63;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border-left: 5px solid #3b82f6;
+}
+.book-item.favorite {
+    border-left-color: #ef4444 ;
+    background: #fef2fe;
+}
+.book-item h4 {
+    margin: 0 0 5px 0;
+}
 .book-item p {
     margin: 0;
     font-size: 14px;
