@@ -26,4 +26,21 @@ if (!isHtmlValid) {
   titleValidationHint.style.display = 'none';
   bookTitle.style.borderColor = '#ddd';
 }
+
+// js execution status matching validation requirements
+let isjsValid = runLiveReviewValidation();
+  if(!isHtmlValid || !isjsValid) {
+    return; // if field fail checks and then  terminate execution line
+}
+
+// using parent-child-sibling relationship to navigate between elements
+ const starterCard = document.getElementById('starterCard');
+ If (starterCard) {
+  const innerTextChild = starterCard.lastChild;
+
+  // using parent node
+  const parentShelf = starterCard.parentNode;
+  parentShelf.removeChild(starterCard);
+ }
+
 }
