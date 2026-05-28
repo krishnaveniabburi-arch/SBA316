@@ -43,4 +43,19 @@ let isjsValid = runLiveReviewValidation();
   parentShelf.removeChild(starterCard);
  }
 
+ // DOM creation and manipulation
+
+ // creating new elements using createElement
+ const newBookRow = document.createElement('div');
+ newBookRow.classList.add('book-item');
+
+ // checking flags style modifiers
+ if (bookTitle.ariaValueMax.toLowerCase().includes('best')) {
+    newBookRow.classList.add('favorite');
+ }
+
+ const titleEL = document.createElement('h4');
+ // giving values using text content
+
+  titleEL.textContent = bookTitle.value;
 }
