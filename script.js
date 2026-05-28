@@ -1,17 +1,17 @@
 // cache  elements using getelement by id
 
-const bookForm = Document.getElementById('bookForm');
-const bookTitle = Document.getElementById('bookTitle');
-const bookReview = Document.getElementById('bookReview');
+const bookForm = document.getElementById('bookForm');
+const bookTitle = document.getElementById('bookTitle');
+const bookReview = document.getElementById('bookReview');
+const titleValidationHint = document.getElementById('titlevalidationHint');
 
 // cache elements using query selector
-const bookShelf = Document.querySelector('#bookShelf');
-const checkShelfBtn = Document.querySelector('.info-btn');
+const bookShelf = document.querySelector('#bookShelf');
+const checkShelfBtn = document.querySelector('.info-btn');
 
-// using 3 types of  event Listeners input and submit
+// using 2 types of  event Listeners input and submit
 bookForm.addEventListener('submit', handleFormSubmit);
-bookReview.addEventListener('input', runLiveReviewValidation);
-checkShelfBtn.addEventListener('click, showShelfStatitics');
+bookReview.addEventListener('input', runliveReviewValidation);
 
 // Event handler functions & validation
 
@@ -19,6 +19,7 @@ function handleFormSubmit(event) {
   Event.preventDefault(); // page refresh
 
   // html attribute validation check
+
   let isHtmlValid = bookTitle.validity.valid;
   if (!isHtmlValid) {
     titleValidationHint.style.display = 'block';
@@ -64,7 +65,7 @@ function handleFormSubmit(event) {
 
   // giving values using innerHTml text
 
-  reviewEl.innerHTML = '<strong>Notes:</strong> ${bookReview.value || no review notes provided}' ;
+  reviewEl.innerHTML = '<strong>Notes:</strong> ${bookReview.value || no review notes provided}';
 
   // using appendChild 
 
@@ -72,8 +73,29 @@ function handleFormSubmit(event) {
   newBookRow.appendChild(reviewEl);
 
   // using append method to apply structured template 
-    bookShelf.append(newBookRow);
+  bookShelf.append(newBookRow);
 
   // resetting values and clear form layout values cleanly
   bookForm.reset();
 }
+
+// create function to validate parameters
+
+function runLiveReviewValidation() {
+  const bannedwords = ['boring'];
+  const currentText = bookReview.value.toLowerCase();
+  const ReviewValidationHint = document.getElementById('reviewValidationHint');
+  let containsBanned = bannedwords.some(word => currentText.includes(word));
+
+  if (containsBanned) {
+    ReviewValidationHint.style.display = 'block'; // altering css layout
+    bookReview.style.borderColor = '#b91c1c';
+    return false;
+  } else {
+    ReviewValidationHint.style.display = 'none';
+    bookReview.style.borderColor = '#ddd';
+    return true;
+  }
+}
+
+// 
