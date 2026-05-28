@@ -12,6 +12,7 @@ const checkShelfBtn = document.querySelector('.info-btn');
 // using 2 types of  event Listeners input and submit
 bookForm.addEventListener('submit', handleFormSubmit);
 bookReview.addEventListener('input', runliveReviewValidation);
+checkShelfBtn.addEventListener('click', showShelfStatistics);
 
 // Event handler functions & validation
 
@@ -98,4 +99,26 @@ function runLiveReviewValidation() {
   }
 }
 
-// 
+// Iterate over a collection of elements to accomplish some task
+// using BOM methods(browser object model)
+
+function showShelfStatistics() {
+  // create list using query selector
+  const collectionList = document.querySelectorAll('.book-item');
+  let favoriteCount = 0;
+
+  // iterate collection of elements and count will increase to accomplish dynamic calculation
+   collectionList.forEach((item) => {
+    if (item.classList.contains('favorite')) {
+      value = favoriteCount++;
+    }
+   });
+
+   // BOM method using window.confirm  to get feedback
+    const promptFeedback = window.confirm('Total books Listed: ${collectionList.Length}\nFavorite Tier Counts: ${favoriteCount}\n\nWould you like to search reference guides?');
+     if (promptFeedback) {
+      // using BOM window.open to open blank
+       window.open('https://wikipedia.org', 'blank');
+     }
+
+}
