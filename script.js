@@ -1,11 +1,12 @@
-// cache  elements using getElementById
-const bookForm = document.getElementById('bookForm');
-const bookTitle = document.getElementById('bookTitle');
-const bookReview = document.getElementById('bookReview');
+// cache  elements using getelement by id
+
+const bookForm = Document.getElementById('bookForm');
+const bookTitle = Document.getElementById('bookTitle');
+const bookReview = Document.getElementById('bookReview');
 
 // cache elements using query selector
-const bookShelf = document.querySelector('#bookShelf');
-const checkShelfBtn = document.querySelector('.info-btn');
+const bookShelf = Document.querySelector('#bookShelf');
+const checkShelfBtn = Document.querySelector('.info-btn');
 
 // using 3 types of  event Listeners input and submit
 bookForm.addEventListener('submit', handleFormSubmit);
@@ -63,7 +64,7 @@ function handleFormSubmit(event) {
 
   // giving values using innerHTml text
 
-  reviewEl.innerHTML = '<strong>Notes:</strong> ${bookReview.value || 'no review notes provided'}' ;
+  reviewEl.innerHTML = '<strong>Notes:</strong> ${bookReview.value || no review notes provided}' ;
 
   // using appendChild 
 
@@ -71,7 +72,7 @@ function handleFormSubmit(event) {
   newBookRow.appendChild(reviewEl);
 
   // using append method to apply structured template 
-  bookShelf.append(newBookRow);
+    bookShelf.append(newBookRow);
 
   // resetting values and clear form layout values cleanly
   bookForm.reset();
