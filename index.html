@@ -16,7 +16,17 @@
     <form id="bookForm" novalidate>
         <div class = "input-box">
             <label for="book Title">Book Title:</label>
-            <input type="text" id="bookTitle"
-        </div> 
+            <input type="text" id="bookTitle" required minlength="3" placeholder="at least 3 characters">
+            <div class="alert-hint" id="titleValidationHint">Title must containat least 3 charaters.</div>
+        </div>
+        
+        // input for js titleValidationHint
+        <div class="input-box">
+            <label for="bookReview">Short Review Notes:</label>
+            <input type="text" id="bookreview" placeholder="Avoid text summary like 'boring'">
+            <div class="alert-hint" id="reviewValidationHint">Review details blocklisted words!</div>
+        </div>
+        <button type="submit">Add to shelf</button>
+        </form>
 </body>
 </html>
