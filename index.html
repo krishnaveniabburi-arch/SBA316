@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SBA 316 creating book review log(personal book log)</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    
 </head>
 <body>
     <div class="wrapper">
@@ -28,5 +28,22 @@
         </div>
         <button type="submit">Add to shelf</button>
         </form>
+
+        <section>
+            <div class="shelf-header">
+                <h3>Logged Books</h3>
+                <button id="checkShelfbtn" class="info-btn">Shelf Status Check</button>
+            </div>
+            <div id="bookShelf">
+                <div class="book-item" id="startercard">
+                    <h4>Empty Shelf</h4>
+                    <p id="StarterText">No custom reading review items added to tracking stream.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js" defer></script>
+
 </body>
 </html>
