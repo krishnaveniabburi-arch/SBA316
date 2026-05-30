@@ -4,6 +4,7 @@ const bookForm = document.getElementById('bookForm');
 const bookTitle = document.getElementById('bookTitle');
 const bookReview = document.getElementById('bookReview');
 const titleValidationHint = document.getElementById('titlevalidationHint');
+const reviewErrorElement = document.getElementById('reviewValidationHint');
 
 // cache elements using query selector
 const bookShelf = document.querySelector('#bookShelf');
@@ -17,7 +18,7 @@ checkShelfBtn.addEventListener('click', showShelfStatistics);
 // Event handler functions & validation
 
 function handleFormSubmit(event) {
-  Event.preventDefault(); // page refresh
+  event.preventDefault(); // page refresh
 
   // html attribute validation check
 
@@ -38,9 +39,9 @@ function handleFormSubmit(event) {
 
   // using parent-child-sibling relationship to navigate between elements
   const starterCard = document.getElementById('starterCard');
-  If(starterCard)
+  if(starterCard) {
   const innerTextChild = starterCard.lastChild;
-
+  }
   // using parent node
   const parentShelf = starterCard.parentNode;
   parentShelf.removeChild(starterCard);
