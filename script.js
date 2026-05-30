@@ -12,7 +12,9 @@ const checkShelfBtn = document.querySelector('.info-btn');
 
 // using 2 types of  event Listeners input and submit
 bookForm.addEventListener('submit', handleFormSubmit);
-bookReview.addEventListener('input', runliveReviewValidation);
+bookReview.addEventListener('input', (event) => {
+  console.log("user is typing:", event.target.value);
+});
 checkShelfBtn.addEventListener('click', showShelfStatistics);
 
 // Event handler functions & validation
